@@ -1,0 +1,38 @@
+*, *::before {
+    box-sizing: border-box;
+}
+
+header {
+    height: 12vh;
+}
+
+body {
+    background-color: #333;
+}
+
+section {
+    --gap-size: 0.5vmin;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    margin: 0;
+}
+
+#game_board {
+    display: grid;
+    background-color: #CCC;
+    gap: var(--gap-size);
+    padding: var(--gap-size);
+    border-radius: 0.5vmin;
+}
+
+.cell {
+    background-color: #AAA;
+    border-radius: 0.5vmin;
+}
+
+.notChecked:hover {
+    background-color: rgb(155, 154, 154);
+}
