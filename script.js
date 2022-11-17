@@ -18,8 +18,6 @@ function onInit () {
 
     createVirtualBoard(board_size);
     drawBoard(virtual_board);
-
-    console.log(virtual_board);
 }
 
 // ------------------------------ VIRTUAL BOARD ------------------------------
@@ -123,6 +121,7 @@ function drawBoard(virtual_board) {
             cell.className = "cell notChecked";
             cell.setAttribute('id', id);
             cell.innerHTML = virtual_board[i][j];
+            cell.addEventListener('click', revealCell.bind(this, id), false);  
 
             board.appendChild(cell);
 
@@ -133,4 +132,9 @@ function drawBoard(virtual_board) {
         column_id++;
 
     }
+}
+
+// Event executed on clicked cell
+function revealCell(cellId) {
+    document.getElementById(cellId).className = "cell checked";
 }

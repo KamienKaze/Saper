@@ -37,14 +37,36 @@ section {
 
     font-size: 4vmin;
 
-    background-color: #AAA;
+    background-color: rgb(150, 150, 150);
     border-radius: 0.5vmin;
 }
 
 .notChecked {
     color: rgba(0, 0, 0, 0);
+    transform: rotateY(180deg);
+
+}
+
+.checked {
+    color: rgba(0, 0, 0, 0);
+    transform: rotateY(180deg);
+
+    animation: rotateY 0.3s forwards;
 }
 
 .notChecked:hover {
-    background-color: rgb(155, 154, 154);
+    background-color: rgb(139, 139, 139);
 }
+
+  @-webkit-keyframes rotateY {
+    10% { transform: rotateY(198deg); color: rgba(0, 0, 0, 0); background-color: rgb(150, 150, 150);}
+    20% { transform: rotateY(216deg); color: rgba(0, 0, 0, 0); background-color: rgb(150, 150, 150);}
+    30% { transform: rotateY(234deg); color: rgba(0, 0, 0, 0); background-color: rgb(150, 150, 150);}
+    40% { transform: rotateY(252deg); color: rgba(0, 0, 0, 0); background-color: rgb(150, 150, 150);}
+    50% { transform: rotateY(270deg); color: rgba(0, 0, 0, 1); background-color: #AAA;}
+    60% { transform: rotateY(288deg); color: rgba(0, 0, 0, 1); background-color: #AAA;}
+    70% { transform: rotateY(306deg); color: rgba(0, 0, 0, 1); background-color: #AAA;}
+    80% { transform: rotateY(324deg); color: rgba(0, 0, 0, 1); background-color: #AAA;}
+    90% { transform: rotateY(342deg); color: rgba(0, 0, 0, 1); background-color: #AAA;}
+    100% { transform: rotateY(360deg); color: rgba(0, 0, 0, 1); background-color: #AAA;}
+  }
