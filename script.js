@@ -136,5 +136,21 @@ function drawBoard(virtual_board) {
 
 // Event executed on clicked cell
 function revealCell(cellId) {
-    document.getElementById(cellId).className = "cell checked";
+    var cell = document.getElementById(cellId);
+
+    cell.className = "cell checked";
+
+    if(cell.innerHTML == -1) {
+        revealAllBombs();
+    }
+}
+
+function revealAllBombs() {
+    for(i = 0; i < board_size; i++) {
+        for(j = 0; j < board_size; j++) {
+            if(document.getElementById('cell_'  + i + "_" + j).innerHTML == -1) {
+                document.getElementById('cell_'  + i + "_" + j).className = "cell checked";
+            }
+        }
+    }
 }
